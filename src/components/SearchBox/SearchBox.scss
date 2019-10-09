@@ -1,0 +1,96 @@
+@import '../../mixins';
+@import '../../constant';
+
+$box-height: 50px;
+
+.SearchBox {
+  height: $box-height;
+  width: 100%;
+  box-sizing: border-box;
+  .control {
+    box-sizing: border-box;
+    clear: both;
+    font-size: 1rem;
+    position: relative;
+    text-align: left;
+  }
+
+
+  .control.has-icons .icon {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    z-index: 4;
+    padding: 11px;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 34px;
+    height: 34px;
+  }
+
+  .icon {
+  }
+
+  .input {
+    height: 34px;
+    box-sizing: border-box;
+    max-width: 100%;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 10px;
+    color: #363636;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    align-items: center;
+    box-shadow: none;
+    display: inline-flex;
+    font-size: 1rem;
+    justify-content: flex-start;
+    line-height: 1.5;
+    position: relative;
+    vertical-align: top;
+    padding: 10px 10px 10px 35px;
+  }
+}
+
+@include for-web {
+  .SearchBox {
+    background-color: $navbar-menu-bg-color;
+    padding: 8px 15px;
+  }
+
+  .SearchBox .icon {
+    height: 34px;
+    width: 34px;
+    color: white;
+  }
+
+  .SearchBox .input {
+    padding: 10px 10px 10px 35px;
+    border: none;
+    background-color: $navbar-menu-item-bg-color;
+    color: white;
+  }
+
+  .SearchBox .input::placeholder {
+    color: white;
+  }
+}
+
+@include for-mobile {
+  .SearchBox {
+    padding: 8px 10px;
+    background-color: #dbdbdb;
+  }
+
+  .SearchBox .input {
+    background-color: white;
+    color: #4d4d4d;
+    border: none;
+  }
+}
+
+
+

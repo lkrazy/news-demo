@@ -1,0 +1,156 @@
+@import '../../mixins';
+@import '../../constant';
+
+#HeaderBar {
+}
+
+@include for-web {
+  #HeaderBar {
+    height: 120px;
+    padding: 0 20px;
+  }
+  .navbar-toggle {
+    display: none;
+  }
+
+  #MenuContainer {
+    margin-left: 80px;
+  }
+
+  #MenuContainer {
+    display: flex;
+    flex-grow: 0;
+  }
+
+  .navbar-menu {
+    display: flex;
+    flex-grow: 0;
+    height: 50px;
+  }
+
+  .navbar {
+    align-items: stretch;
+    display: flex;
+  }
+
+
+}
+
+
+@include for-mobile {
+  #HeaderBar {
+    height: 110px !important;
+    background-color: $navbar-menu-bg-color;
+  }
+
+  #HeaderBar .Logo-container {
+    float: left;
+    margin: 5px 5px 5px 18px;
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  #MenuContainer {
+    border-top: grey solid 1px;
+    background-color: $navbar-menu-item-bg-color;
+    position: absolute;
+    width: 100%;
+    display: none;
+    z-index: 5;
+  }
+
+  .navbar-header {
+    height: 60px;
+  }
+
+  #MenuContainer.expanded {
+    display: block;
+  }
+}
+
+
+
+#HeaderBar {
+  .Logo-container {
+    box-sizing: border-box;
+    width: 120px;
+    height: 120px;
+    padding: 0;
+    vertical-align: middle;
+    border-radius: 50%;
+    background-color: white;
+    border: #09d3ac solid 1px;
+    img {
+      width: 120px;
+      width: 120px;
+    }
+  }
+  #MenuContainer {
+    justify-content: start;
+    align-items: center;
+    .Menu-content {
+      height: 50px;
+    }
+  }
+
+  .SearchBox-container {
+    display: flex;
+    flex-grow: 1;
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .navbar-toggle {
+    position: relative;
+    float: right;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-right: 15px;
+    /*background-color: transparent;*/
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    height: 30px;
+    width: 30px;
+  }
+
+  .navbar-menu .navbar-item {
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 1px;
+    background-color: $navbar-menu-item-bg-color;
+    padding: 10px 30px;
+    cursor: pointer;
+    &:hover {
+      background-color: $navbar-menu-item-hover-bg-color;
+    }
+  }
+
+  .navbar-menu {
+    background-color: $navbar-menu-bg-color;
+    color: white;
+  }
+}
+
+
+.Menu-content ul {
+  padding-inline-start: 0;
+  list-style-type: none;
+}
+
+.Menu-content ul li {
+  padding-left: 20px;
+  padding-right: 20px;
+  display: inline;
+}
+
+
+
+
+
+
+

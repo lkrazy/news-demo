@@ -1,0 +1,58 @@
+@import '../../../mixins.scss';
+
+@include for-web {
+  .News {
+    width: 33.33%;
+    min-width: 33.33%;
+    margin-bottom: 45px;
+    .News-inner {
+      padding: 0 10px 15px 10px;
+      margin: 0 20px;
+      border-width: 1px;
+    }
+  }
+}
+
+@include for-mobile {
+  .News {
+    width: 100%;
+    min-width: 100%;
+    .News-inner {
+      border-width: 1px 0;
+    }
+  }
+}
+
+.News {
+  display: flex;
+  align-content: center;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  .News-inner {
+    border-color: grey;
+    border-style: solid;
+    width: 100%;
+    .News-title {
+      width: 100%;
+      padding: 20px 0;
+      text-align: left;
+    }
+    .News-image {
+      height: 160px;
+      max-height: 160px;
+    }
+    .News-content {
+      margin: 10px 0;
+      height: 200px;
+      max-height: 200px;
+      text-align: left;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    .News-history {
+      text-align: left;
+    }
+  }
+}
+

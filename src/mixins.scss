@@ -1,0 +1,14 @@
+$mobileMaxWidth: 767px;
+$webMinWidth: 768px;
+
+@mixin for-mobile {
+  @media(max-width:$mobileMaxWidth) {
+    @content;
+  }
+}
+
+@mixin for-web {
+  @media(min-width:$webMinWidth) {
+    @content;
+  }
+}
