@@ -7,9 +7,25 @@
     padding: 0 20px;
     align-items: stretch;
     display: flex;
-    .navbar-toggle {
-      display: none;
+
+    .navbar-header {
+      .app-name {
+        display: none;
+      }
+
+      .navbar-toggle {
+        display: none;
+      }
+
+      .logo-container {
+
+        img {
+          max-width: 120px;
+          max-height: 120px;
+        }
+      }
     }
+
     #menu-container {
       margin-left: 80px;
       display: flex;
@@ -20,13 +36,6 @@
         height: 50px;
       }
     }
-    .logo-container {
-
-      img {
-        max-width: 120px;
-        max-height: 120px;
-      }
-    }
   }
 }
 
@@ -35,43 +44,104 @@
     height: 110px !important;
     background-color: $navbar-menu-bg-color;
 
-    .navbar-toggle {
+    .navbar-header {
       position: relative;
-      float: right;
-      cursor: pointer;
-      margin-top: 15px;
-      margin-right: 15px;
-      background-color: transparent;
-      box-shadow: none;
-      background-image: none;
-      border: none;
-      //border: 1px solid transparent;
-      padding: 0;
-      border-radius: 4px;
-      height: 30px;
-      width: 30px;
-      .icon {
-        font-size: 30px;
-        color: white;
-      }
-      &:focus {
-        outline: none;
-      }
-      &:hover, &:active, &.active {
-        background: #ffffff;
+
+      .navbar-toggle {
+        position: relative;
+        float: right;
+        cursor: pointer;
+        margin-top: 15px;
+        margin-right: 15px;
+        margin-bottom: 15px;
+        background-color: transparent;
+        box-shadow: none;
+        background-image: none;
+        border: none;
+        //border: 1px solid transparent;
+        padding: 0;
+        border-radius: 0;
+        height: 30px;
+        width: 30px;
+
+        &:not(.active) {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+
+        .close-icon {
+          display: none;
+        }
+
         .icon {
-          color: $navbar-menu-bg-color;
+          display: flex;
+          height: 4px;
+          width: 30px;
+          min-width: 100%;
+          background-color: white;
+
+          &:first-child {
+            top: 0px;
+            margin-top: 0px;
+          }
+
+          &:not(:first-child) {
+          }
+        }
+
+        &:focus {
+          outline: none;
+        }
+
+        &::-moz-focus-inner {
+          border: 0;
+        }
+
+        &:hover {
+          //background: #ffffff;
+          //border: #ffffff solid 1px;
+          .icon {
+            background-color: $navbar-menu-item-hover-bg-color;
+          }
+        }
+
+        &.active {
+          border: #ffffff solid 1px;
+
+          .icon {
+            display: none;
+          }
+
+          .close-icon {
+            font-size: 26px;
+            color: #ffffff;
+            display: inline-block;
+          }
         }
       }
-    }
-    .logo-container {
-      float: left;
-      margin: 5px 5px 5px 18px;
-      width: 50px !important;
-      height: 50px !important;
-      img {
-        max-width: 50px;
-        max-height: 50px;
+
+      .logo-container {
+        float: left;
+        margin: 5px 5px 5px 18px;
+        width: 50px !important;
+        height: 50px !important;
+
+        img {
+          max-width: 50px;
+          max-height: 50px;
+        }
+      }
+
+      .app-name {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        font-size: 30px;
       }
     }
   }

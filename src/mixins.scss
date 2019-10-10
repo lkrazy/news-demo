@@ -1,5 +1,4 @@
-$mobileMaxWidth: 767px;
-$webMinWidth: 768px;
+@import './constant';
 
 @mixin for-mobile {
   @media(max-width:$mobileMaxWidth) {

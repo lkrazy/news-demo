@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import './Navbar.scss'
 import SearchBox from '../SearchBox/SearchBox'
 
@@ -30,14 +30,20 @@ class Navbar extends Component {
     return (
       <div className="navbar">
         <div className="navbar-header">
+          <div className="app-name">
+            News
+          </div>
           <button className={toggleClasses.join(' ')} onClick={this.onExpandClick}>
-            <span className="icon">
-              <FontAwesomeIcon icon={faBars} />
-            </span>
+            <div className="icon"></div>
+            <div className="icon"></div>
+            <div className="icon"></div>
+            <div className="icon"></div>
+            <FontAwesomeIcon className="close-icon" icon={faTimes} />
           </button>
           <div className="navbar-item logo-container">
             <img className="" src="logo192.png" alt="News App Logo"/>
           </div>
+
         </div>
         <div id="menu-container" className={menuClasses.join(' ')}>
           <div className="navbar-menu">
