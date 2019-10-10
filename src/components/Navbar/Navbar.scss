@@ -48,6 +48,9 @@
       position: relative;
 
       .navbar-toggle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: relative;
         float: right;
         cursor: pointer;
@@ -65,7 +68,6 @@
         width: 30px;
 
         &:not(.active) {
-          display: flex;
           flex-direction: column;
           justify-content: space-between;
         }
@@ -75,9 +77,8 @@
         }
 
         .icon {
-          display: flex;
           height: 4px;
-          width: 30px;
+          width: 100%;
           min-width: 100%;
           background-color: white;
 

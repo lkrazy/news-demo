@@ -33,13 +33,13 @@ class Navbar extends Component {
           <div className="app-name">
             News
           </div>
-          <button className={toggleClasses.join(' ')} onClick={this.onExpandClick}>
+          <a className={toggleClasses.join(' ')} onClick={this.onExpandClick} target="_blank" rel="noopener noreferrer">
             <div className="icon"></div>
             <div className="icon"></div>
             <div className="icon"></div>
             <div className="icon"></div>
             <FontAwesomeIcon className="close-icon" icon={faTimes} />
-          </button>
+          </a>
           <div className="navbar-item logo-container">
             <img className="" src="logo192.png" alt="News App Logo"/>
           </div>
