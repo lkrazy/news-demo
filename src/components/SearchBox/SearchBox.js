@@ -1,14 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import * as actionTypes from '../../store/actions'
 import './SearchBox.scss'
+
 
 const SearchBox = (props) => {
   return (
     <div className="search-box">
       <div className="control has-icons">
         <span className="icon is-small is-left">
-          <i className="fas fa-user"></i>
+          <FontAwesomeIcon icon={faSearch}/>
         </span>
         <input
           className="input is-success"

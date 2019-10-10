@@ -34,16 +34,45 @@
   .navbar {
     height: 110px !important;
     background-color: $navbar-menu-bg-color;
-  }
 
-  .navbar .logo-container {
-    float: left;
-    margin: 5px 5px 5px 18px;
-    width: 50px !important;
-    height: 50px !important;
-    img {
-      max-width: 50px;
-      max-height: 50px;
+    .navbar-toggle {
+      position: relative;
+      float: right;
+      cursor: pointer;
+      margin-top: 15px;
+      margin-right: 15px;
+      background-color: transparent;
+      box-shadow: none;
+      background-image: none;
+      border: none;
+      //border: 1px solid transparent;
+      padding: 0;
+      border-radius: 4px;
+      height: 30px;
+      width: 30px;
+      .icon {
+        font-size: 30px;
+        color: white;
+      }
+      &:focus {
+        outline: none;
+      }
+      &:hover, &:active, &.active {
+        background: #ffffff;
+        .icon {
+          color: $navbar-menu-bg-color;
+        }
+      }
+    }
+    .logo-container {
+      float: left;
+      margin: 5px 5px 5px 18px;
+      width: 50px !important;
+      height: 50px !important;
+      img {
+        max-width: 50px;
+        max-height: 50px;
+      }
     }
   }
 
@@ -54,6 +83,8 @@
     width: 100%;
     display: none;
     z-index: 5;
+    -webkit-box-shadow: 0 4px 3px rgba(0,0,0,.5);
+    box-shadow: 0 4px 3px rgba(0,0,0,.5);
   }
 
   .navbar-header {
@@ -91,20 +122,6 @@
     align-items: center;
     display: flex;
     justify-content: center;
-  }
-
-  .navbar-toggle {
-    position: relative;
-    float: right;
-    cursor: pointer;
-    margin-top: 15px;
-    margin-right: 15px;
-    /*background-color: transparent;*/
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    height: 30px;
-    width: 30px;
   }
 
   .navbar-menu {
