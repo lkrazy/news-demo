@@ -1,56 +1,53 @@
 @import '../../mixins';
 @import '../../constant';
 
-#HeaderBar {
-}
-
 @include for-web {
-  #HeaderBar {
+  .navbar {
     height: 120px;
     padding: 0 20px;
-  }
-  .navbar-toggle {
-    display: none;
-  }
-
-  #MenuContainer {
-    margin-left: 80px;
-  }
-
-  #MenuContainer {
-    display: flex;
-    flex-grow: 0;
-  }
-
-  .navbar-menu {
-    display: flex;
-    flex-grow: 0;
-    height: 50px;
-  }
-
-  .navbar {
     align-items: stretch;
     display: flex;
+    .navbar-toggle {
+      display: none;
+    }
+    #menu-container {
+      margin-left: 80px;
+      display: flex;
+      flex-grow: 0;
+      .navbar-menu {
+        display: flex;
+        flex-grow: 0;
+        height: 50px;
+      }
+    }
+    .logo-container {
+
+      img {
+        max-width: 120px;
+        max-height: 120px;
+      }
+    }
   }
-
-
 }
 
-
 @include for-mobile {
-  #HeaderBar {
+  .navbar {
     height: 110px !important;
     background-color: $navbar-menu-bg-color;
   }
 
-  #HeaderBar .Logo-container {
+  .navbar .logo-container {
     float: left;
     margin: 5px 5px 5px 18px;
     width: 50px !important;
     height: 50px !important;
+    img {
+      max-width: 50px;
+      max-height: 50px;
+    }
   }
 
-  #MenuContainer {
+  #menu-container {
     border-top: grey solid 1px;
     background-color: $navbar-menu-item-bg-color;
     position: absolute;
@@ -63,15 +60,15 @@
     height: 60px;
   }
 
-  #MenuContainer.expanded {
+  #menu-container.expanded {
     display: block;
   }
 }
 
 
 
-#HeaderBar {
-  .Logo-container {
+.navbar {
+  .logo-container {
     box-sizing: border-box;
     width: 120px;
     height: 120px;
@@ -79,24 +76,18 @@
     vertical-align: middle;
     border-radius: 50%;
     background-color: white;
-    border: #09d3ac solid 1px;
     img {
       width: 120px;
       width: 120px;
     }
   }
-  #MenuContainer {
+  #menu-container {
     justify-content: start;
     align-items: center;
-    .Menu-content {
-      height: 50px;
-    }
   }
 
-  .SearchBox-container {
-    display: flex;
+  .search-box-container {
     flex-grow: 1;
-
     align-items: center;
     display: flex;
     justify-content: center;
@@ -116,38 +107,24 @@
     width: 30px;
   }
 
-  .navbar-menu .navbar-item {
-
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    margin: 1px;
-    background-color: $navbar-menu-item-bg-color;
-    padding: 10px 30px;
-    cursor: pointer;
-    &:hover {
-      background-color: $navbar-menu-item-hover-bg-color;
-    }
-  }
-
   .navbar-menu {
     background-color: $navbar-menu-bg-color;
     color: white;
+
+    .navbar-item {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      margin: 1px;
+      background-color: $navbar-menu-item-bg-color;
+      padding: 10px 30px;
+      cursor: pointer;
+      &:hover {
+        background-color: $navbar-menu-item-hover-bg-color;
+      }
+    }
   }
 }
-
-
-.Menu-content ul {
-  padding-inline-start: 0;
-  list-style-type: none;
-}
-
-.Menu-content ul li {
-  padding-left: 20px;
-  padding-right: 20px;
-  display: inline;
-}
-
 
 
 

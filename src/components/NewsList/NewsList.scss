@@ -1,15 +1,35 @@
-.NewsList {
+@import '../../mixins';
+
+
+@include for-web {
+  .news-list {
+    margin: 0 -20px;
+  }
+
+  #load-more-btn {
+    width: 100%;
+  }
+}
+
+@include for-mobile {
+  #load-more-btn {
+    margin: 10px 5px;
+    width: calc(100% - 10px);
+  }
+}
+
+.news-list {
   display: flex;
   flex-direction: row;
-  margin: 0 -20px;
   flex-wrap: wrap;
 }
 
 #load-more-btn {
-  width: 100%;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  padding: 15px 0;
   border-radius: 4px;
   border: grey solid 1px;
   cursor: pointer;
 }
+

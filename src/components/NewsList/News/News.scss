@@ -1,56 +1,76 @@
 @import '../../../mixins.scss';
 
 @include for-web {
-  .News {
+  .news {
     width: 33.33%;
     min-width: 33.33%;
     margin-bottom: 45px;
-    .News-inner {
+    .news-inner {
       padding: 0 10px 15px 10px;
       margin: 0 20px;
       border-width: 1px;
+
+      .news-title {
+        width: 100%;
+      }
+      .news-content {
+        margin: 10px 0;
+      }
     }
   }
 }
 
 @include for-mobile {
-  .News {
+  .news {
     width: 100%;
     min-width: 100%;
-    .News-inner {
+    .news-inner {
       border-width: 1px 0;
+      padding: 8px 10px 10px 10px;
+      position: relative;
+
+      .news-title, .news-content, .news-history {
+        margin-left: 40%;
+      }
+
+      .news-image {
+        position: absolute;
+        top: 8px;
+        width: calc(40% - 20px);
+      }
     }
   }
 }
 
-.News {
+.news {
   display: flex;
   align-content: center;
   text-align: center;
   align-items: center;
   justify-content: center;
-  .News-inner {
+  .news-inner {
     border-color: grey;
+    background-color: #ffffff;
     border-style: solid;
     width: 100%;
-    .News-title {
-      width: 100%;
+    .news-title {
       padding: 20px 0;
       text-align: left;
     }
-    .News-image {
+    .news-image {
+      box-sizing: border-box;
+      background: #dbdbdb;
       height: 160px;
       max-height: 160px;
     }
-    .News-content {
-      margin: 10px 0;
+    .news-content {
       height: 200px;
       max-height: 200px;
       text-align: left;
       text-overflow: ellipsis;
       overflow: hidden;
     }
-    .News-history {
+    .news-history {
       text-align: left;
     }
   }

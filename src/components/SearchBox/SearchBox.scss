@@ -3,7 +3,7 @@
 
 $box-height: 50px;
 
-.SearchBox {
+.search-box {
   height: $box-height;
   width: 100%;
   box-sizing: border-box;
@@ -56,40 +56,49 @@ $box-height: 50px;
 }
 
 @include for-web {
-  .SearchBox {
+  .search-box {
     background-color: $navbar-menu-bg-color;
     padding: 8px 15px;
-  }
-
-  .SearchBox .icon {
-    height: 34px;
-    width: 34px;
-    color: white;
-  }
-
-  .SearchBox .input {
-    padding: 10px 10px 10px 35px;
-    border: none;
-    background-color: $navbar-menu-item-bg-color;
-    color: white;
-  }
-
-  .SearchBox .input::placeholder {
-    color: white;
+    .icon {
+      height: 34px;
+      width: 34px;
+      color: white;
+    }
+    .input {
+      padding: 10px 10px 10px 35px;
+      border: none;
+      background-color: $navbar-menu-item-bg-color;
+      color: white;
+      &:focus {
+        outline: none;
+        -moz-box-shadow:    inset 0 0 10px rgba(255,255,255,0.25);
+        -webkit-box-shadow: inset 0 0 10px rgba(255,255,255,0.25);
+        box-shadow:         inset 0 0 10px rgba(255,255,255,0.25);
+      }
+      &::placeholder {
+        color: white;
+      }
+    }
   }
 }
 
 @include for-mobile {
-  .SearchBox {
+  .search-box {
     padding: 8px 10px;
     background-color: #dbdbdb;
+    .input {
+      background-color: white;
+      color: #4d4d4d;
+      border: none;
+      &:focus {
+        outline: none;
+        -moz-box-shadow:    inset 0 0 5px rgba(0, 0, 0 ,0.25);
+        -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0 ,0.25);
+        box-shadow:         inset 0 0 5px rgba(0, 0, 0 ,0.25);
+      }
+    }
   }
 
-  .SearchBox .input {
-    background-color: white;
-    color: #4d4d4d;
-    border: none;
-  }
 }
 
 

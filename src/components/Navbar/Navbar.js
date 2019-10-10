@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import './HeaderBar.scss'
+import './Navbar.scss'
 import SearchBox from '../SearchBox/SearchBox'
 
-class HeaderBar extends Component {
+class Navbar extends Component {
   state = {
     expand: false
   }
@@ -24,16 +24,16 @@ class HeaderBar extends Component {
     }
 
     return (
-      <div id="HeaderBar" className="navbar">
+      <div className="navbar">
         <div className="navbar-header">
           <button className="navbar-toggle" onClick={this.onExpandClick}>
             <span className="fa-bars"></span>
           </button>
-          <div className="navbar-item Logo-container">
-            <img className=""/>
+          <div className="navbar-item logo-container">
+            <img className="" src="logo192.png" alt="News App Logo"/>
           </div>
         </div>
-        <div id="MenuContainer" className={menuClasses.join(' ')}>
+        <div id="menu-container" className={menuClasses.join(' ')}>
           <div className="navbar-menu">
             <div className="navbar-item">News</div>
             <div className="navbar-item">Region</div>
@@ -43,8 +43,8 @@ class HeaderBar extends Component {
           </div>
 
         </div>
-        <div className="Menu-content SearchBox-container">
-          <SearchBox search={this.props.search} changed={this.props.searchChanged}/>
+        <div className="search-box-container">
+          <SearchBox/>
         </div>
       </div>
     )
@@ -52,4 +52,4 @@ class HeaderBar extends Component {
 
 }
 
-export default HeaderBar
+export default Navbar
