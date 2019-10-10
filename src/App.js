@@ -13,7 +13,23 @@ class App extends Component {
           <NewsList/>
         </div>
         <div className="app-footer">
-          Footer [Todo]
+          <div className="menu">
+            <span className="menu-item">
+              News
+            </span>
+            <span className="menu-item">
+              Region
+            </span>
+            <span className="menu-item">
+              Video
+            </span>
+            <span className="menu-item">
+              TV
+            </span>
+          </div>
+          <div className="copy-right">
+            Copy right &#9400; AMPOS
+          </div>
         </div>
       </div>
     );

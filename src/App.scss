@@ -1,10 +1,10 @@
 @import './mixins';
+@import './constant';
 
 .app {
   text-align: center;
   margin: auto;
   height: 100%;
-  background-color: #dbdbdb;
 
   .app-logo {
     height: 40vmin;
@@ -12,15 +12,50 @@
 
   .app-content {
     box-sizing: border-box;
-    padding: 20px 20px 75px 20px;
+    padding: 20px 20px 72px 20px;
     height: 100%;
   }
 
   .app-footer {
+    box-sizing: border-box;
     position: absolute;
+    border-top: #787878 solid 1px;
     bottom: 0;
     width: 100%;
-    height: 50px;
+    display: flex;
+    padding: 25px 20px 25px 36px;
+
+    .menu {
+      font-weight: bold;
+      height: 100%;
+      display: flex;
+      flex-grow: 1;
+      justify-content: flex-start;
+
+      .menu-item {
+        color: $navbar-menu-item-bg-color;
+        padding-right: 15px;
+
+        &:hover {
+          cursor: pointer;
+          color: $navbar-menu-item-hover-bg-color;
+        }
+
+        &:not(:first-child) {
+          padding-left: 15px;
+          border-left: lightslategrey solid 1px;
+        }
+
+      }
+
+    }
+    .copy-right {
+      color: lightslategrey;
+      height: 100%;
+      display: flex;
+      flex-grow: 0;
+      justify-content: flex-end;
+    }
   }
 }
 

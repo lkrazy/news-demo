@@ -1,4 +1,5 @@
-@import '../../../mixins.scss';
+@import '../../../mixins';
+@import '../../../constant';
 
 @include for-web {
   .news {
@@ -54,6 +55,8 @@
     border-style: solid;
     width: 100%;
     .news-title {
+      color: $navbar-menu-item-hover-bg-color;
+      font-weight: bold;
       padding: 20px 0;
       text-align: left;
     }
@@ -72,6 +75,7 @@
     }
     .news-history {
       text-align: left;
+      color: lightslategrey;
     }
   }
 }

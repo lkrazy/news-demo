@@ -13,6 +13,7 @@ code {
 }
 
 #root {
+  background-color: #dbdbdb;
   position: relative;
   min-height: 100vh;
 }
