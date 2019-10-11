@@ -12,6 +12,7 @@ class NewsList extends Component{
     newsList: [],
     pageIndex: 0,
     total: -1,
+    isMobile: false,
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {

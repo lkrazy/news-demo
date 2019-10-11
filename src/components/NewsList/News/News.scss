@@ -12,6 +12,7 @@
       border-width: 1px;
 
       .news-title {
+        padding: 20px 0;
         width: 100%;
       }
       .news-content {
@@ -39,15 +40,26 @@
       position: relative;
 
       .news-title, .news-content, .news-history {
+        padding-left: 10px;
+        padding-right: 0;
         margin-left: 40%;
       }
 
       .news-image {
         position: absolute;
-        top: 8px;
-        width: calc(40% - 20px);
+        top: 0;
+        left: 0;
+        padding-top: 8px;
+        padding-left: 10px;
+        width: 40%;
         max-height: calc(100% - 20px);
         overflow: hidden;
+      }
+      .news-title {
+        padding: 20px 10px 10px 10px;
+      }
+      .news-history {
+        padding-top: 10px;
       }
     }
   }
@@ -67,12 +79,11 @@
     .news-title {
       color: $navbar-menu-item-hover-bg-color;
       font-weight: bold;
-      padding: 20px 0;
       text-align: left;
     }
     .news-image {
       box-sizing: border-box;
-      background: #9f9f9f;
+      background: transparent;
       max-height: 160px;
       margin: auto;
 
