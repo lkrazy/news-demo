@@ -10,7 +10,6 @@ class Navbar extends Component {
   }
 
   onExpandClick = () => {
-    console.log('onExpand')
     this.setState(
       {
         expand: !this.state.expand

@@ -1,32 +1,12 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import moment from 'moment'
 import './News.scss'
 
 class News extends Component {
-  state = {
-    isMobile: false
-  }
-
-  onWindowSizeChanged() {
-    if (window.innerWidth > 768) {
-      this.setState({
-        isMobile: false
-      })
-    } else {
-      this.setState({
-        isMobile: true
-      })
-    }
-  }
-
-  componentDidMount() {
-    this.onWindowSizeChanged()
-    window.addEventListener('resize', this.onWindowSizeChanged.bind(this))
-  }
-
   render() {
-    let updatedAt = this.props.data.updated
-    if (this.state.isMobile) {
+    let updatedAt
+    if (this.props.isMobile) {
       updatedAt = moment(this.props.data.updated).format('MMMM DD, hh:mm')
     } else {
       updatedAt = moment(this.props.data.updated).format('DD MMMM, YYYY hh:mm')
@@ -45,4 +25,10 @@ class News extends Component {
   }
 }
 
-export default News
+const mapStateToProps = (state) => {
+  return {
+    isMobile: state.isMobile
+  }
+}
+
+export default connect(mapStateToProps)(News)

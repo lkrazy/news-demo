@@ -14,8 +14,8 @@ describe('<NewsList /> component', () => {
   const initialState = {
     search: ''
   }
-  let wrapper;
-  let store;
+  let wrapper
+  let store
   beforeEach(() => {
     store = mockStore(initialState)
   })

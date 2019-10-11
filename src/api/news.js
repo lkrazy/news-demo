@@ -12,7 +12,10 @@ for (let i = 1; i <= max; i ++) {
 
 export default {
   getAll(pageIndex, itemsPerPage, search) {
-    let searchLower = (search || '').toLowerCase()
+    let searchLower = ''
+    if (search) {
+      searchLower = search.toLowerCase()
+    }
     let filteredNews = allNews
     if (searchLower.trim().length > 0) {
       const searchParts = searchLower.split(' ')

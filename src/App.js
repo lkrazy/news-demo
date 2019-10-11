@@ -1,9 +1,29 @@
-import React, { Component } from 'react';
-import './App.scss';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import './App.scss'
 import Navbar from './components/Navbar/Navbar'
-import NewsList from './components/NewsList/NewsList';
+import NewsList from './components/NewsList/NewsList'
+import * as actionTypes from './store/actions'
 
 class App extends Component {
+
+  onWindowSizeChanged() {
+    let isMobile = true
+    if (window.innerWidth > 768) {
+      isMobile = false
+    }
+    this.props.updateDeviceType(isMobile)
+  }
+
+  componentDidMount() {
+    this.onWindowSizeChanged()
+    window.addEventListener('resize', this.onWindowSizeChanged.bind(this))
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onWindowSizeChanged.bind(this))
+
+  }
 
   render() {
     return (
@@ -32,9 +52,15 @@ class App extends Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateDeviceType: (payload) => dispatch({ type: actionTypes.UPDATE_DEVICE_TYPE, payload})
+  }
+}
+
+export default connect(null, mapDispatchToProps)(App)
