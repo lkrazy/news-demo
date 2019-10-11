@@ -19,6 +19,12 @@
         max-height: 200px;
         margin: 10px 0;
       }
+      .news-image {
+        height: 160px;
+        img {
+          width: 100%;
+        }
+      }
     }
   }
 }
@@ -65,8 +71,8 @@
     .news-image {
       box-sizing: border-box;
       background: #9f9f9f;
-      height: 160px;
       max-height: 160px;
+      margin: auto;
 
       img {
         max-width: 100%;
