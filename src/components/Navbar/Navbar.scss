@@ -4,7 +4,7 @@
 @include for-web {
   .navbar {
     height: 120px;
-    padding: 0 20px;
+    padding: 20px;
     align-items: stretch;
     display: flex;
 
@@ -30,11 +30,18 @@
       margin-left: 80px;
       display: flex;
       flex-grow: 0;
+      width: 60%;
       .navbar-menu {
         display: flex;
-        flex-grow: 0;
+        flex-grow: 1;
         height: 50px;
+        .navbar-item {
+          width: 25%;
+        }
       }
+    }
+    .search-box-container {
+      width: 40%;
     }
   }
 }
@@ -207,8 +214,9 @@
       background-color: $navbar-menu-item-bg-color;
       padding: 10px 30px;
       cursor: pointer;
-      &:hover {
-        background-color: $navbar-menu-item-hover-bg-color;
+      &:hover, &:active, &:focus {
+        background-color: #ffffff;
+        color: $navbar-menu-item-bg-color
       }
     }
   }

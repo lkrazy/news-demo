@@ -20,7 +20,7 @@
     background-color: #ffffff;
     box-sizing: border-box;
     position: absolute;
-    border-top: #787878 solid 1px;
+    border-top: $default-border-color solid 1px;
     bottom: 0;
     width: 100%;
     display: flex;
@@ -44,11 +44,9 @@
 
         &:not(:first-child) {
           padding-left: 15px;
-          border-left: lightslategrey solid 1px;
+          border-left: $default-border-color solid 1px;
         }
-
       }
-
     }
     .copy-right {
       color: lightslategrey;
@@ -61,9 +59,6 @@
 }
 
 @include for-web {
-  .app {
-    background-color: #dbdbdb;
-  }
 }
 
 @include for-mobile {
@@ -82,4 +77,6 @@
   padding: 0 !important;
 }
 
-
+.hide {
+  display: none
+}
