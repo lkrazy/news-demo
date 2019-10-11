@@ -8,7 +8,7 @@ class NewsList extends Component{
     newsList: []
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.loadMore()
   }
 
