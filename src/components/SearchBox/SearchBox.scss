@@ -96,9 +96,9 @@ $box-height: 50px;
       border: none;
       &:focus {
         outline: none;
-        -moz-box-shadow:    0 0 8px rgba(0, 0, 0 ,0.35);
+        -moz-box-shadow: 0 0 8px rgba(0, 0, 0 ,0.35);
         -webkit-box-shadow: 0 0 8px rgba(0, 0, 0 ,0.35);
-        box-shadow:         0 0 8px rgba(0, 0, 0 ,0.35);
+        box-shadow: 0 0 8px rgba(0, 0, 0 ,0.35);
       }
     }
   }

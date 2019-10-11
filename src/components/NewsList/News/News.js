@@ -12,7 +12,6 @@ class News extends Component {
       updatedAt = moment(this.props.data.updated).format('DD MMMM, YYYY hh:mm')
     }
     return (
-
       <div className="news">
         <div className="news-inner">
           <div className="news-title">{this.props.data.title}</div>
