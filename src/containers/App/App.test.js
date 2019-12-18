@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { configure, shallow, mount } from 'enzyme'
-import { Provider } from 'react-redux'
+import { configure } from 'enzyme'
 import configureStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 import App from './App'

@@ -1,4 +1,4 @@
-@import './constant';
+@import 'constant';
 
 @mixin for-mobile {
   @media(max-width:$mobileMaxWidth) {

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import './App.scss'
-import Navbar from './components/Navbar/Navbar'
-import NewsList from './components/NewsList/NewsList'
-import * as actionTypes from './store/actions'
+import Navbar from '@/components/Navbar/Navbar'
+import NewsList from '@/components/NewsList/NewsList'
+import * as actionTypes from '@/redux/actions/actions'
 
 class App extends Component {
 

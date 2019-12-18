@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import News from './News/News'
 import './NewsList.scss'
-import newsApi from '../../api/news'
+import newsApi from '@/services/news'
 
 const rowsPerPage = 15
 
-class NewsList extends Component{
+class NewsList extends PureComponent{
   state = {
     search: '',
     newsList: [],
@@ -56,27 +56,14 @@ class NewsList extends Component{
   }
 
   render() {
-
-    const NewsListEl = this.state.newsList.map((news, index) => {
-      return (
-        <News key={index}
-              data={news}>
-        </News>
-      )
-    })
-    return (
-      <div>
-        <div className="news-list">
-          {NewsListEl}
-        </div>
-        <button id="load-more-btn"
-                disabled={!this.hasMore()}
-                onClick={this.loadMore}
-        >
-          Load More
-        </button>
-      </div>
-    )
+    return pug`
+      div
+        div.news-list
+          each news, index in this.state.newsList
+            News(key=index data=news)
+            
+        button#load-more-btn(disabled=!this.hasMore() onClick=this.loadMore) Load More
+    `
   }
 }
 

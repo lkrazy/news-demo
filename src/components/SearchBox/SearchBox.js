@@ -1,8 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import * as actionTypes from '../../store/actions'
+import * as actionTypes from '@/redux/actions/actions'
 import './SearchBox.scss'
 
 
@@ -22,6 +23,11 @@ const SearchBox = (props) => {
       </div>
     </div>
   )
+}
+
+SearchBox.propTypes = {
+  search: PropTypes.string,
+  onSearchChange: PropTypes.func
 }
 
 const mapStateToProps = (state) => {
