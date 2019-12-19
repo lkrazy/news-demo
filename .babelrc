@@ -3,7 +3,7 @@
     "react-app"
   ],
   "plugins": [
-    "transform-react-pug",
-    "transform-react-jsx"
+    "transform-react-jsx",
+    ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }]
   ]
 }

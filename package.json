@@ -10,6 +10,7 @@
     "@svgr/webpack": "4.3.2",
     "@typescript-eslint/eslint-plugin": "^2.2.0",
     "@typescript-eslint/parser": "^2.2.0",
+    "antd": "^3.26.3",
     "axios": "^0.19.0",
     "babel-eslint": "10.0.3",
     "babel-jest": "^24.9.0",
@@ -87,11 +88,10 @@
     ]
   },
   "devDependencies": {
+    "babel-plugin-import": "^1.13.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
-    "babel-plugin-transform-react-pug": "^7.0.1",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.0",
-    "eslint-plugin-react-pug": "^0.8.4",
     "jest": "^24.9.0",
     "moment": "^2.24.0",
     "node-sass": "^4.12.0",

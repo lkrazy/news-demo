@@ -51,19 +51,25 @@ class NewsList extends PureComponent{
   }
 
   hasMore() {
+    const { total, pageIndex } = this.state
     return this.state.total < 0 ||
       (this.state.total > 0 && (this.state.pageIndex * rowsPerPage) < this.state.total)
   }
 
   render() {
-    return pug`
-      div
-        div.news-list
-          each news, index in this.state.newsList
-            News(key=index data=news)
-            
-        button#load-more-btn(disabled=!this.hasMore() onClick=this.loadMore) Load More
-    `
+
+    return (
+      <div>
+        <div className="news-list">
+          {
+            this.state.newsList.map((news, index) => (
+              <News key={index} data={news}></News>
+            ))
+          }
+        </div>
+        <button id="load-more-btn" disabled={!this.hasMore()} onClick={this.loadMore}>Load More</button>
+      </div>
+    )
   }
 }
 

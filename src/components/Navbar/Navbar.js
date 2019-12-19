@@ -1,63 +1,49 @@
 import React, { Component } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import LeftMenu from '@/components/Navbar/LeftMenu'
+import {
+  Drawer,
+  Button
+} from 'antd'
 import './Navbar.scss'
-import SearchBox from '../SearchBox/SearchBox'
+
 
 class Navbar extends Component {
   state = {
-    expand: false
+    drawer: false
   }
 
-  onExpandClick = () => {
-    this.setState(
-      {
-        expand: !this.state.expand
-      }
-    )
+  onDrawerOpen = () => {
+    this.setState({ drawer: true })
+  }
+
+  onDrawerClose = () => {
+    this.setState({ drawer: false })
   }
 
   render() {
-
-    const toggleClasses = ['navbar-toggle']
-    const menuClasses = []
-    if (this.state.expand) {
-      menuClasses.push('expanded')
-      toggleClasses.push('active')
-    }
+    const { drawer } = this.state
 
     return (
-      <div className="navbar">
-        <div className="navbar-header">
-          <div className="app-name">
-            News
+      <div className="menuBar">
+        <div className="logo">
+          <a href="#">logo</a>
+        </div>
+        <div className="menuCon">
+          <div className="leftMenu">
+            <LeftMenu />
           </div>
-          <div className={toggleClasses.join(' ')}
-               onClick={this.onExpandClick}
+          <Button className="barsMenu" type="primary" onClick={this.onDrawerOpen}>
+            <span className="barsBtn"></span>
+          </Button>
+          <Drawer
+            title="Basic Drawer"
+            placement="right"
+            closable
+            onClose={this.onDrawerClose}
+            visible={drawer}
           >
-            <div className="icon"></div>
-            <div className="icon"></div>
-            <div className="icon"></div>
-            <div className="icon"></div>
-            <FontAwesomeIcon className="close-icon" icon={faTimes} />
-          </div>
-          <div className="navbar-item logo-container">
-            <img className="" src="logo192.png" alt="News App Logo"/>
-          </div>
-
-        </div>
-        <div id="menu-container" className={menuClasses.join(' ')}>
-          <div className="navbar-menu">
-            <div className="navbar-item">News</div>
-            <div className="navbar-item">Region</div>
-            <div className="navbar-item">Video</div>
-            <div className="navbar-item">TV</div>
-
-          </div>
-
-        </div>
-        <div className="search-box-container">
-          <SearchBox/>
+            <LeftMenu />
+          </Drawer>
         </div>
       </div>
     )

@@ -43,6 +43,8 @@ module.exports = {
     'no-return-await': 'off',
     'no-undef': 'off',
     'quotes': ['error', 'single'],
+    'react-pug/no-interpolation': 'disable',
+    'no-interpolation': 'off',
   },
   overrides: [
   ],

@@ -1,231 +1,100 @@
 @import '../../assets/styles/mixins';
 @import '../../assets/styles/constant';
 
-@include for-web {
-  .navbar {
-    height: 120px;
-    padding: 20px;
-    align-items: stretch;
-    display: flex;
-
-    .navbar-header {
-      .app-name {
-        display: none;
-      }
-
-      .navbar-toggle {
-        display: none;
-      }
-
-      .logo-container {
-
-        img {
-          max-width: 120px;
-          max-height: 120px;
-        }
-      }
-    }
-
-    #menu-container {
-      margin-left: 80px;
-      display: flex;
-      flex-grow: 0;
-      width: 60%;
-      .navbar-menu {
-        display: flex;
-        flex-grow: 1;
-        height: 50px;
-        .navbar-item {
-          width: 25%;
-        }
-      }
-    }
-    .search-box-container {
-      width: 40%;
-    }
-  }
+.menuBar{
+  padding: 0 20px;
+  border-bottom: solid 1px #e8e8e8;
+  overflow: hidden;
+  box-shadow: 0 0 30px #f3f1f1;
+}
+.logo{
+  width: 150px;
+  float: left;
+}
+.logo a{
+  display: inline-block;
+  font-size: 20px;
+  //padding: 19px 20px;
+  text-transform: capitalize;
+}
+.menuCon{
+  width: calc(100% - 150px);
+  float: left;
+}
+.menuCon .ant-menu-item{
+  padding: 0px 5px;
+}
+.menuCon .ant-menu-submenu-title{
+  padding: 10px 20px;
+}
+.menuCon .ant-menu-item a, .menuCon .ant-menu-submenu-title a{
+  padding: 8px 15px;
+}
+.menuCon .ant-menu-horizontal{
+  border-bottom: none;
+}
+.menuCon .leftMenu{
+  float: left;
+}
+.menuCon .rightMenu{
+  float: right;
+}
+.barsMenu{
+  float: right;
+  height: 32px;
+  padding: 6px;
+  margin-top: 8px;
+  display: none;
+  background: none;
+}
+.barsBtn{
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #1890ff;
+  position: relative;
+}
+.barsBtn:after,.barsBtn:before{
+  content: attr(x);
+  width: 20px;
+  position: absolute;
+  top: -6px;
+  left: 0;
+  height: 2px;
+  background: #1890ff;
+}
+.barsBtn:after{
+  top: auto;
+  bottom: -6px;
+}
+.ant-drawer-body{
+  padding: 0;
+}
+.ant-drawer-body .ant-menu-horizontal > .ant-menu-item, .ant-drawer-body .ant-menu-horizontal > .ant-menu-submenu{
+  display: inline-block;
+  width: 100%;
+}
+.ant-drawer-body .ant-menu-horizontal{
+  border-bottom: none;
+}
+.ant-drawer-body .ant-menu-horizontal > .ant-menu-item:hover{
+  border-bottom-color: transparent;
 }
 
-@include for-mobile {
-  .navbar {
-    height: 110px !important;
-    background-color: $navbar-menu-bg-color;
-
-    .navbar-header {
-      position: relative;
-
-      .navbar-toggle {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        float: right;
-        cursor: pointer;
-        margin-top: 15px;
-        margin-right: 15px;
-        margin-bottom: 15px;
-        background-color: transparent;
-        -moz-box-shadow: none;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-        background-image: none;
-        border: none;
-        //border: 1px solid transparent;
-        padding: 0;
-        border-radius: 0;
-        height: 30px;
-        width: 30px;
-
-        &:not(.active) {
-          flex-direction: column;
-          justify-content: space-between;
-        }
-
-        .close-icon {
-          display: none;
-        }
-
-        .icon {
-          height: 4px;
-          width: 100%;
-          min-width: 100%;
-          background-color: white;
-
-          &:first-child {
-            top: 0px;
-            margin-top: 0px;
-          }
-
-          &:not(:first-child) {
-          }
-        }
-
-        &:focus {
-          outline: none;
-        }
-
-        &::-moz-focus-inner {
-          border: 0;
-        }
-
-        &:hover {
-          //background: #ffffff;
-          //border: #ffffff solid 1px;
-          .icon {
-            background-color: $navbar-menu-item-hover-bg-color;
-          }
-        }
-
-        &.active {
-          border: #ffffff solid 1px;
-
-          .icon {
-            display: none;
-          }
-
-          .close-icon {
-            font-size: 26px;
-            color: #ffffff;
-            display: inline-block;
-          }
-        }
-      }
-
-      .logo-container {
-        float: left;
-        margin: 5px 5px 5px 18px;
-        width: 50px !important;
-        height: 50px !important;
-
-        img {
-          max-width: 50px;
-          max-height: 50px;
-        }
-      }
-
-      .app-name {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #ffffff;
-        font-size: 30px;
-      }
-    }
+@media(max-width: 767px){
+  .barsMenu{
+    display: inline-block;
   }
-
-  #menu-container {
-    border-top: grey solid 1px;
-    background-color: $navbar-menu-item-bg-color;
-    position: absolute;
-    width: 100%;
+  .leftMenu,.rightMenu{
     display: none;
-    z-index: 5;
-    -webkit-box-shadow: 0 4px 3px rgba(0,0,0,.5);
-    box-shadow: 0 4px 3px rgba(0,0,0,.5);
   }
-
-  .navbar-header {
-    height: 60px;
+  .logo a{
+    //margin-left: -20px;
   }
-
-  #menu-container.expanded {
-    display: block;
+  .menuCon .ant-menu-item, .menuCon .ant-menu-submenu-title{
+    padding: 1px 20px;
+  }
+  .logo a{
+    //padding: 10px 20px;
   }
 }
-
-
-
-.navbar {
-  .logo-container {
-    box-sizing: border-box;
-    width: 120px;
-    height: 120px;
-    padding: 0;
-    vertical-align: middle;
-    border-radius: 50%;
-    background-color: white;
-    img {
-      width: 120px;
-      width: 120px;
-    }
-  }
-  #menu-container {
-    justify-content: start;
-    align-items: center;
-  }
-
-  .search-box-container {
-    flex-grow: 1;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-  }
-
-  .navbar-menu {
-    background-color: $navbar-menu-bg-color;
-    color: white;
-
-    .navbar-item {
-      align-items: center;
-      display: flex;
-      justify-content: center;
-      margin: 1px;
-      background-color: $navbar-menu-item-bg-color;
-      padding: 10px 30px;
-      cursor: pointer;
-      &:hover, &:active, &:focus {
-        background-color: #ffffff;
-        color: $navbar-menu-item-bg-color
-      }
-    }
-  }
-}
-
-
-
-
-
-
